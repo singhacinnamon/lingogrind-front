@@ -1,38 +1,278 @@
-.App {
-  text-align: center;
+body {
+  background-color: #38AFE9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #f7e557;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  font-size: 20px;
+  width: 70%;
+  margin: auto;
+}
+
+/* li {
+  display: inline;
+} */
+
+.horizontal {
+  display: inline-block;
+}
+
+.w5 {
+  color: white;
+}
+.db5 {
+  color: #0072af;
+}
+.flex {
   display: flex;
-  flex-direction: column;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav .container-fluid {
+  display: flex;
+}
+
+.navbar-nav .lefty {
+  margin-right: auto; /* Push this item to the far left */
+}
+
+.navbar-nav .righty a{
+  margin-left: auto; /* Push these items to the far right */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-nav .righty {
+  margin-right: 2%;
+  color: white;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown:hover>.dropdown-menu {
+  display: block;
+  position: absolute;
+  border-radius: 0;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+.logoutBtn {
+  background-color: transparent;
+  border: none;
+  margin: inherit;
+}
+
+.right-caret::after {
+  /* position: absolute; */
+  right: 20px;
+  top: 50%;
+  margin-top: -5px;
+}
+
+#logoutDropdown {
+  background-color: #0072af;
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: #0072af;
+  margin-top: 0;
+  padding: 0;
+}
+
+.dropdown-menu > li:hover {
+  background-image: none;
+  background-color: #00629f;
+}
+
+.error-text {
+  color: #f7e557;
+}
+
+.top-round {
+  border-radius: 5rem 5rem 0rem 0rem;
+  background-color: #f7e557;
+  width: 75%;
+  height: auto;
+  color: black;
+}
+
+.bottom-round {
+  border-radius: 0rem 0rem 5rem 5rem;
+  background-color: #f7e557;
+  width: 75%;
+  height: 30px;
+}
+
+#nav-container {
+  background-color: #0072af;
+  position: sticky;
+  margin-bottom: 30px;
+}
+
+#logo {
+  font-size: 30px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+#langcard {
+  width: 18rem; 
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.jumbotron {
+  color: white;
+  background-color: #38AFE9;
+}
+
+.list-group {
+  width: 75%;
+}
+
+.list-group-item {
+  color: #808080;
+  background-color: white;
+  font-size: 25px;
+  text-align: left;
+  border-radius: 0rem !important;
+}
+
+.lesson {
+  background-color: white;
+  color: darkslategray;
+  margin: 0 auto;
+  text-align: center;
+  margin: auto;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+  padding: 2%;
+  border-radius: 5rem;
+}
+
+.login-bubble {
+  background-color: white;
+  color: darkslategray;
+  text-align: center;
+  margin: auto;
+  border-radius: 5rem;
+  padding: 2%;
+}
+
+.btn-db {
+  background-color: #0072af;
+  color: white;
+}
+
+.table {
+  color: darkslategray;
+  width: 50%;
+  margin: auto;
+}
+
+.note-content {
+  font-style: italic;
+  opacity: 60%;
+}
+
+.hometitle {
+  margin: auto;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.yellow {
+  color: #f7e557;
+}
+.quote {
+  font-style: italic;
+}
+
+.lp {
+  text-align: left;
+  font-family: Georgia, serif;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.blurb {
+  width: 70%;
+}
+
+half-wide {
+  width: 50%;
+}
+
+.alongside {
+  margin: auto;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 45%;
+  height: auto;
+  margin: auto;
+}
+
+.right-indent {
+  margin-right: 20%;
+}
+
+.ctr {
+  text-align: center;
+}
+
+.back {
+  color: white;
+  margin-left: 3%;
+}
+
+.backarr {
+  margin-top: 1%;
+}
+
+.backarr img {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.backdiv {
+  width: auto;
 }

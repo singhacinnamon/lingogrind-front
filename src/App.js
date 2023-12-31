@@ -1,24 +1,88 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect, createContext } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import HomePage from "./HomePage";
+import Es from "./Es";
+import Th from "./Th";
+import About from "./About";
+import LessonComponentLoader from './LessonComponentLoader';
+import Login from './Login';
+import UserOrLogin from './UserOrLogin';
+import Register from './Register'
 
 function App() {
+
+  const [data, setData] = useState([]);
+  const [globUser, setGlobUser] = useState('');
+
+  const setLsnRoutes = async () => {
+      await fetch("/api/get-lsn?lang=es")
+      .then((response) => response.json())
+      .then((responseData) => {
+          setData(responseData);
+      })
+      .catch((error) => {
+          console.error('Error fetching data:', error);
+      });
+  }
+
+  const get_user = async () => {
+      const response = await fetch("/api/get_user/", {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application.json',
+          },
+      });
+      if(response.ok) {
+          const data = await response.json();
+          setGlobUser(data.username);
+      }
+  };
+
+
+  // useEffect(setLsnRoutes, []);
+  // useEffect(get_user, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div className="container-fluid" id="nav-container">
+          <ul className="navbar-nav">
+            <li className="lefty">
+              <Link to="/">
+                <h1 id="logo">Lingogrind</h1>
+              </Link>
+            </li>
+            <li className="righty">
+                <Link to="/about">
+                    <h5>About</h5>
+                </Link>
+            </li>
+            <li className="righty">
+              <UserOrLogin globUser={ globUser } setGlobUser={ setGlobUser } />
+            </li>
+          </ul>
+        </div>
+        <div className="container-fluid">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/es" element={<Es />} />
+            <Route path="/th" element={<Th />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login setGlobUser={ setGlobUser }/>} />
+            <Route path="/reg" element={<Register setGlobUser={ setGlobUser }/>} />
+            { data.map( (lsn) =>
+              <Route
+              key={lsn.file}
+              path={`/${lsn.file}`}
+              element={<LessonComponentLoader componentName={lsn.file} />}
+              />
+            )}
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 
