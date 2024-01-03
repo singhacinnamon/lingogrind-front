@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./HomePage";
 import Es from "./Es";
@@ -15,18 +15,21 @@ function App() {
   const [data, setData] = useState([]);
   const [globUser, setGlobUser] = useState('');
 
-  const setLsnRoutes = async () => {
+  useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
+    const setLsnRoutes = async () => {
       await fetch("/api/get-lsn?lang=es")
       .then((response) => response.json())
       .then((responseData) => {
-          setData(responseData);
+        setData(responseData);
       })
       .catch((error) => {
           console.error('Error fetching data:', error);
       });
-  }
-
-  const get_user = async () => {
+    }
+    setLsnRoutes();
+  }, []);
+  useEffect(() => {
+    const get_user = async () => {
       const response = await fetch("/api/get_user/", {
           method: 'GET',
           headers: {
@@ -38,10 +41,8 @@ function App() {
           setGlobUser(data.username);
       }
   };
-
-
-  // useEffect(setLsnRoutes, []);
-  // useEffect(get_user, []);
+    get_user();
+  }, []);
 
 
   return (

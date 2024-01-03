@@ -60,6 +60,8 @@ function About(props) {
                 comfortable calling it fluent. I was also able to learn about things specific to Thailand like local institutions, geography, 
                 and infrastructure. 
                 <br></br><br></br>
+
+                <h1 className="ctr title">Japanese Speedrun</h1><br></br>
                 During my stay in Thailand, I went to Japan for a week to refresh my visa. Japanese is ranked as one of the five 
                 most difficult languages for English speakers to learn, with the Foreign Service Institute estimating 2200 hours needed 
                 to achieve proficiency. I thought it would be a fun challenge 
@@ -107,8 +109,9 @@ function About(props) {
                 for round 2. This time I'm staying for a month and a half and I'm already so much better than last time. My vocabulary has 
                 probably tripled and my grammar and comprehension are far smoother. 
                 <br></br><br></br>
-                That concludes the story so far. I'm excited to see what I'll write next!
+                That concludes the story so far, but I'm excited to see what the future has in store!
                 </p>
+                <br></br><br></br>
             </div>
         </center>
         </div>

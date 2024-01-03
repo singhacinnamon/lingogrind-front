@@ -8,10 +8,18 @@ h1 {
 
 input {
   border-radius: 5px;
-  margin-left: 5px;
+  margin: 5px;
+}
+
+button {
+  margin-top: 10px;
 }
 
 a:hover {
+  text-decoration: none;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -231,7 +239,7 @@ p {
   width: 70%;
 }
 
-half-wide {
+.half-wide {
   width: 50%;
 }
 
