@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
     const setLsnRoutes = async () => {
-      await fetch("/api/get-lsn?lang=es")
+      await fetch("api.lingogrind.com/get-lsn?lang=es")
       .then((response) => response.json())
       .then((responseData) => {
         setData(responseData);
