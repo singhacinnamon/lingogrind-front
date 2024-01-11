@@ -14,7 +14,7 @@ function Login({ setGlobUser  }) {
             password: password,
         };
     
-        const response = await fetch('/api/ling_login/', {
+        const response = await fetch('api.lingogrind.com/ling_login/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ function LangCardSet() {
     return (
         <>
         { langs.map(lang => (
-            <Link to={ lang.abbr }>
+            <Link to={ lang.abbr } key={ lang.abbr }>
                 <div className="card" id="langcard">
                     <img className="card-img-top" src={ lang.pic } alt="Card image cap" />
                     <div className="card-body">

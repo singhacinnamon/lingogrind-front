@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function UserOrLogin({ globUser, setGlobUser }) {
 
     const logOut = () => {
-        fetch("/api/ling_logout");
+        fetch("api.lingogrind.com/ling_logout");
         setGlobUser('')
     }
 
