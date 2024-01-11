@@ -17,7 +17,6 @@ function App() {
 
   useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
     const setLsnRoutes = async () => {
-      console.log("Current protocol:", window.location.protocol);
       await fetch("https://api.lingogrind.com/get-lsn?lang=es")
       .then((response) => response.json())
       .then((responseData) => {
@@ -45,6 +44,20 @@ function App() {
     get_user();
   }, []);
 
+  useEffect(() => {
+    const get_csrf = async () => {
+      const response = await fetch("https://api.lingogrind.com/csrf_cookie", {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application.json',
+          },
+      });
+      if(response.ok) {
+          console.log("csrf token set")
+      }
+    };
+    get_csrf();
+  }, []);
 
   return (
     <>
