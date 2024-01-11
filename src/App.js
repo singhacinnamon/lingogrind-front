@@ -31,7 +31,7 @@ function App() {
   }, []);
   useEffect(() => {
     const get_user = async () => {
-      const response = await fetch("api.lingogrind.com/get_user/", {
+      const response = await fetch("https://api.lingogrind.com/get_user/", {
           method: 'GET',
           headers: {
               'Content-Type': 'application.json',

@@ -7,7 +7,7 @@ function LessonList(props) {
 
     //Get lesson list for specified language
     useEffect(() => {
-        fetch("api.lingogrind.com/get-lsn?lang=" + lang)
+        fetch("https://api.lingogrind.com/get-lsn?lang=" + lang)
         .then((response) => response.json())
         .then((responseData) => {
             setData(responseData);

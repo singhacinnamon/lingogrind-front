@@ -22,7 +22,7 @@ function Register({ setGlobUser  }) {
             password: password,
         };
     
-        const response = await fetch('api.lingogrind.com/ling_reg/', {
+        const response = await fetch('https://api.lingogrind.com/ling_reg/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
