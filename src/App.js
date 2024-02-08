@@ -54,10 +54,12 @@ function App() {
       });
       if(response.ok) {
           console.log("csrf token set")
+          console.log("CSRF token = " + window.CSRF_TOKEN)
       }
     };
     get_csrf();
   }, []);
+  
 
   return (
     <>

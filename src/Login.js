@@ -9,6 +9,7 @@ function Login({ setGlobUser  }) {
     const csrfToken = window.CSRF_TOKEN;
 
     const handleLogin = async () => {
+        console.log("window.CSRF_TOKEN = " + csrfToken)
         const data = {
             username: username,
             password: password,
