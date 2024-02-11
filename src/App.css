@@ -243,6 +243,10 @@ p {
   width: 50%;
 }
 
+.form-div {
+  width: 20%;
+}
+
 .alongside {
   margin: auto;
 }
