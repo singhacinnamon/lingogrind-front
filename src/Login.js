@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import CSRFToken from "./CSRFToken";
 import { getCookie } from "./Utilities"
 
 function Login({ setGlobUser  }) {

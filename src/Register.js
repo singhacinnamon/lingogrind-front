@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CSRFToken from './CSRFToken';
 import { getCookie } from "./Utilities"
 
 function Register({ setGlobUser  }) {
@@ -47,26 +46,28 @@ function Register({ setGlobUser  }) {
         <center>
             <h1>Register</h1>
             <br/>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="username"><h5 className="w5">Username: </h5></label>
-                    <br/>
-                    <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <div className="form-div">
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="username"><h5 className="w5">Username: </h5></label>
+                            <br/>
+                            <input type="text" id="username" name="username" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password"><h5 className="w5">Password: </h5></label>
+                            <br/>
+                            <input type="password" id="password" name="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="confirmPass"><h5 className="w5">Confirm Password: </h5></label>
+                            <br/>
+                            <input type="password" id="confirmPass" name="confirmPass" className="form-control" value={confirmPass} onChange={(e) => setConfirmPass(e.target.value)} />
+                        </div>
+                        { failed ? <><label className="error-text">This username is taken. Please try another name. </label><br/></>: <></>}
+                        { match ? <></>: <><label className="error-text">Passwords do not match!</label><br></br></>}
+                        <button type="button" className="btn btn-db" onClick={ handleReg }><h5 className="w5">Register</h5></button>
+                    </form>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password"><h5 className="w5">Password: </h5></label>
-                    <br/>
-                    <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="confirmPass"><h5 className="w5">Confirm Password: </h5></label>
-                    <br/>
-                    <input type="password" id="confirmPass" name="confirmPass" value={confirmPass} onChange={(e) => setConfirmPass(e.target.value)} />
-                </div>
-                { failed ? <><label className="error-text">This username is taken. Please try another name. </label><br/></>: <></>}
-                { match ? <></>: <><label className="error-text">Passwords do not match!</label><br></br></>}
-                <button type="button" className="btn btn-db" onClick={ handleReg }><h5 className="w5">Register</h5></button>
-            </form>
         </center>
         </>
     )

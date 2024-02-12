@@ -9,15 +9,21 @@ import LessonComponentLoader from './LessonComponentLoader';
 import Login from './Login';
 import UserOrLogin from './UserOrLogin';
 import Register from './Register'
-
+import { getCookie } from './Utilities';  
 function App() {
 
   const [data, setData] = useState([]);
   const [globUser, setGlobUser] = useState('');
+  const csrf = getCookie('csrftoken')
+  console.log("csrf token is: " + csrf)
 
   useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
     const setLsnRoutes = async () => {
-      await fetch("https://api.lingogrind.com/get-lsn?lang=es")
+      await fetch("https://api.lingogrind.com/get-lsn?lang=es", {
+      headers:{
+        'X-CSRFToken' : csrf,
+      }
+      })
       .then((response) => response.json())
       .then((responseData) => {
         setData(responseData);
@@ -28,12 +34,14 @@ function App() {
     }
     setLsnRoutes();
   }, []);
+
   useEffect(() => {
     const get_user = async () => {
       const response = await fetch("https://api.lingogrind.com/get_user/", {
           method: 'GET',
           headers: {
-              'Content-Type': 'application.json',
+            'X-CSRFToken' : csrf,
+            'Content-Type': 'application.json',
           },
       });
       if(response.ok) {
@@ -43,24 +51,7 @@ function App() {
   };
     get_user();
   }, []);
-
-  useEffect(() => {
-    const get_csrf = async () => {
-      const response = await fetch("https://api.lingogrind.com/csrf_cookie", {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application.json',
-          },
-      });
-      if(response.ok) {
-          console.log("csrf token set")
-          console.log("CSRF token = " + window.CSRF_TOKEN)
-      }
-    };
-    get_csrf();
-  }, []);
   
-
   return (
     <>
       <Router>
