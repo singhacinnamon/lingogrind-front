@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CSRFToken from './CSRFToken';
+import { getCookie } from "./Utilities"
 
 function Register({ setGlobUser  }) {
     const [username, setUsername] = useState('');
@@ -8,7 +10,6 @@ function Register({ setGlobUser  }) {
     const [match, setMatch] = useState(true); //For checking if password matches confirm password field
     const navigate = useNavigate();
     const [failed, setFailed] = useState(false); //Used for username conflicts
-    const csrfToken = window.CSRF_TOKEN;
 
     const handleReg = async () => {
         if(password != confirmPass){
@@ -21,12 +22,13 @@ function Register({ setGlobUser  }) {
             username: username,
             password: password,
         };
+        const csrf = getCookie('csrftoken');
     
         const response = await fetch('https://api.lingogrind.com/ling_reg/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken
+                'X-CSRFToken': csrf
             },
             body: JSON.stringify(data),
         });

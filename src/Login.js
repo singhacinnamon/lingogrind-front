@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import CSRFToken from "./CSRFToken";
+import { getCookie } from "./Utilities"
 
 function Login({ setGlobUser  }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [failed, setFailed] = useState(false);
-    const csrfToken = window.CSRF_TOKEN;
 
     const handleLogin = async () => {
-        console.log("window.CSRF_TOKEN = " + csrfToken)
         const data = {
             username: username,
             password: password,
         };
+        const csrf = getCookie('csrftoken');
     
         const response = await fetch('https://api.lingogrind.com/ling_login/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken
+                'X-CSRFToken': csrf
             },
             body: JSON.stringify(data),
         });
@@ -41,7 +41,6 @@ function Login({ setGlobUser  }) {
             <br/>
             <div className="form-div">
                 <form>
-                    <CSRFToken></CSRFToken>
                     <div className="form-group">
                         <label htmlFor="username"><h5 className="w5">Username: </h5></label>
                         <br/>
