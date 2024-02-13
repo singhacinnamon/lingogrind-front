@@ -16,6 +16,15 @@ export function codeToLang(code) {
 export function getCookie(name) {      //Taken from Django docs
     let cookieValue = null;
 
+    if(!document.cookie) {
+        console.log("document.cookie doesn't exist")
+        return null
+    }
+
+    if(document.cookie == '') {
+        console.log("document.cookie is the empty string")
+    }
+
     if (document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
