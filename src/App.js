@@ -14,9 +14,24 @@ function App() {
 
   const [data, setData] = useState([]);
   const [globUser, setGlobUser] = useState('');
-  const csrf = getCookie('csrftoken')
-  console.log("csrf token is: " + csrf)
 
+  useEffect(() => {
+    const get_user = async () => {
+      const response = await fetch("https://api.lingogrind.com/get_csrf", {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application.json',
+          },
+      });
+      if(response.ok) {
+          const data = await response.json();
+          document.cookie = data.csrftoken
+      }
+  };
+    get_user();
+  }, []);
+
+  const csrf = getCookie("csrftoken")
   useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
     const setLsnRoutes = async () => {
       await fetch("https://api.lingogrind.com/get-lsn?lang=es", {

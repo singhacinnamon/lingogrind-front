@@ -19,7 +19,7 @@ function Login({ setGlobUser  }) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrf
+                'X-CSRFToken': getCookie("csrftoken")
             },
             body: JSON.stringify(data),
         });
