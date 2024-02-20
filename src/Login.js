@@ -8,21 +8,21 @@ function Login({ setGlobUser  }) {
     const navigate = useNavigate();
     const [failed, setFailed] = useState(false);
 
-    useEffect(() => {
-        const get_csrf = async () => {
-          const response = await fetch("https://api.lingogrind.com/get_csrf", {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application.json',
-              },
-          });
-          if(response.ok) {
-              const data = await response.json();
-              document.cookie = "csrftoken=" + data.csrftoken
-          }
-      };
-        get_csrf();
-      }, []);
+    // useEffect(() => {
+    //     const get_csrf = async () => {
+    //       const response = await fetch("https://api.lingogrind.com/get_csrf", {
+    //           method: 'GET',
+    //           headers: {
+    //             'Content-Type': 'application.json',
+    //           },
+    //       });
+    //       if(response.ok) {
+    //           const data = await response.json();
+    //           document.cookie = "csrftoken=" + data.csrftoken
+    //       }
+    //   };
+    //     get_csrf();
+    //   }, []);
 
     const handleLogin = async () => {
         const data = {

@@ -15,21 +15,21 @@ function App() {
   const [data, setData] = useState([]);
   const [globUser, setGlobUser] = useState('');
 
-  useEffect(() => {
-    const get_csrf = async () => {
-      const response = await fetch("https://api.lingogrind.com/get_csrf", {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application.json',
-          },
-      });
-      if(response.ok) {
-          const data = await response.json();
-          document.cookie = "csrftoken=" + data.csrftoken
-      }
-  };
-    get_csrf();
-  }, []);
+  // useEffect(() => {
+  //   const get_csrf = async () => {
+  //     const response = await fetch("https://api.lingogrind.com/get_csrf", {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application.json',
+  //         },
+  //     });
+  //     if(response.ok) {
+  //         const data = await response.json();
+  //         document.cookie = "csrftoken=" + data.csrftoken
+  //     }
+  // };
+  //   get_csrf();
+  // }, []);
 
   const csrf = getCookie("csrftoken")
   useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
