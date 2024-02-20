@@ -16,7 +16,7 @@ function App() {
   const [globUser, setGlobUser] = useState('');
 
   useEffect(() => {
-    const get_user = async () => {
+    const get_csrf = async () => {
       const response = await fetch("https://api.lingogrind.com/get_csrf", {
           method: 'GET',
           headers: {
@@ -28,7 +28,7 @@ function App() {
           document.cookie = "csrftoken=" + data.csrftoken
       }
   };
-    get_user();
+    get_csrf();
   }, []);
 
   const csrf = getCookie("csrftoken")
