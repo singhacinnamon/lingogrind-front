@@ -38,6 +38,7 @@ function Login({ setGlobUser  }) {
                 'X-CSRFToken': getCookie("csrftoken")
             },
             body: JSON.stringify(data),
+            credentials: "same-origin",
         });
 
         if (response.ok) {
