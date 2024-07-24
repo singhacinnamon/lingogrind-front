@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function UserOrLogin({ globUser, setGlobUser }) {
-
+    const apiUrl = process.env.REACT_APP_API_URL;
     const logOut = () => {
-        fetch("https://api.lingogrind.com/ling_logout");
+        fetch(`${apiUrl}/ling_logout`);
         setGlobUser('')
     }
 

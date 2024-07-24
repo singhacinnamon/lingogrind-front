@@ -24,7 +24,7 @@ export function getCookie(name) {      //Taken from Django docs
         console.log("document.cookie doesn't exist")
     }
 
-    else if(document.cookie == '') {
+    else if(document.cookie === '') {
         console.log("document.cookie is the empty string")
     }
 

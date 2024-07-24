@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { getCookie } from "./Utilities"
 
 function Login({ setGlobUser  }) {
+    const apiUrl = process.env.REACT_APP_API_URL;
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -31,7 +32,7 @@ function Login({ setGlobUser  }) {
         };
         const csrf = getCookie('csrftoken');
     
-        const response = await fetch('https://api.lingogrind.com/ling_login/', {
+        const response = await fetch(`${apiUrl}/ling_login/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

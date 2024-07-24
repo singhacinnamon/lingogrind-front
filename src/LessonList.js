@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 
 function LessonList(props) {
+    const apiUrl = process.env.REACT_APP_API_URL;
     const [data, setData] = useState([]);
     let lang=props.lang;
 
     //Get lesson list for specified language
     useEffect(() => {
-        fetch("https://api.lingogrind.com/get-lsn?lang=" + lang)
+        fetch(`${apiUrl}/get-lsn?lang=` + lang)
         .then((response) => response.json())
         .then((responseData) => {
             setData(responseData);

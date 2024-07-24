@@ -12,6 +12,7 @@ import Register from './Register'
 import { getCookie } from './Utilities';  
 function App() {
 
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [data, setData] = useState([]);
   const [globUser, setGlobUser] = useState('');
 
@@ -34,7 +35,7 @@ function App() {
   const csrf = getCookie("csrftoken")
   useEffect(() => {                     //Fetching in a useEffect is sometimes inadvisable but App is only rendered once
     const setLsnRoutes = async () => {
-      await fetch("https://api.lingogrind.com/get-lsn?lang=es", {
+      await fetch(`${apiUrl}/get-lsn?lang=es`, {
       headers:{
         'X-CSRFToken' : csrf,
       }
@@ -52,7 +53,7 @@ function App() {
 
   useEffect(() => {
     const get_user = async () => {
-      const response = await fetch("https://api.lingogrind.com/get_user/", {
+      const response = await fetch(`${apiUrl}/get_user/`, {
           method: 'GET',
           headers: {
             'X-CSRFToken' : csrf,
