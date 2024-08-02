@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCookie } from "./Utilities"
+import { getCookie, validUserPass } from "./Utilities"
 
 function Register({ setGlobUser  }) {
     const apiUrl = process.env.REACT_APP_API_URL;
@@ -8,12 +8,14 @@ function Register({ setGlobUser  }) {
     const [password, setPassword] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
     const [match, setMatch] = useState(true); //For checking if password matches confirm password field
+    const [validMsg, setValidMsg] = useState([]);
     const navigate = useNavigate();
-    const [failed, setFailed] = useState(false); //Used for username conflicts
+    const [taken, setTaken] = useState(false); //Used for username conflicts
 
     const handleReg = async () => {
-        if(password != confirmPass){
+        if(password !== confirmPass){
             setMatch(false);
+            setValidMsg([]);
             return;
         } else {
             setMatch(true);
@@ -22,6 +24,11 @@ function Register({ setGlobUser  }) {
             username: username,
             password: password,
         };
+        let validMsgVar = validUserPass(username, password)
+        setValidMsg(validMsgVar);
+        if(validMsgVar.length > 0){
+            return;
+        }
         const csrf = getCookie('csrftoken');
     
         const response = await fetch(`${apiUrl}/ling_reg/`, {
@@ -30,15 +37,16 @@ function Register({ setGlobUser  }) {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrf
             },
+            credentials: 'include',
             body: JSON.stringify(data),
         });
 
         if (response.ok) {
-            setFailed(false);
+            setTaken(false);
             setGlobUser(username)
             navigate(-2);
         } else {
-            setFailed(true);
+            setTaken(true);
         }
     }
     
@@ -64,8 +72,9 @@ function Register({ setGlobUser  }) {
                             <br/>
                             <input type="password" id="confirmPass" name="confirmPass" className="form-control" value={confirmPass} onChange={(e) => setConfirmPass(e.target.value)} />
                         </div>
-                        { failed ? <><label className="error-text">This username is taken. Please try another name. </label><br/></>: <></>}
+                        { taken ? <><label className="error-text">This username is taken. Please try another name. </label><br/></>: <></>}
                         { match ? <></>: <><label className="error-text">Passwords do not match!</label><br></br></>}
+                        { validMsg.map((msg) => <><label className="error-text">{ msg }</label><br></br></>) }
                         <button type="button" className="btn btn-db" onClick={ handleReg }><h5 className="w5">Register</h5></button>
                     </form>
                 </div>

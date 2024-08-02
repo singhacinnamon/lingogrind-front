@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getCookie } from "./Utilities"
 
@@ -8,22 +8,6 @@ function Login({ setGlobUser  }) {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [failed, setFailed] = useState(false);
-
-    // useEffect(() => {
-    //     const get_csrf = async () => {
-    //       const response = await fetch("https://api.lingogrind.com/get_csrf", {
-    //           method: 'GET',
-    //           headers: {
-    //             'Content-Type': 'application.json',
-    //           },
-    //       });
-    //       if(response.ok) {
-    //           const data = await response.json();
-    //           document.cookie = "csrftoken=" + data.csrftoken
-    //       }
-    //   };
-    //     get_csrf();
-    //   }, []);
 
     const handleLogin = async () => {
         const data = {
@@ -36,10 +20,10 @@ function Login({ setGlobUser  }) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie("csrftoken")
+                'X-CSRFToken': csrf
             },
+            credentials: 'include',
             body: JSON.stringify(data),
-            credentials: "same-origin",
         });
 
         if (response.ok) {

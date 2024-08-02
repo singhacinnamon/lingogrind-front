@@ -13,6 +13,7 @@ export function codeToLang(code) {
     }
 }
 
+
 export function getCookie(name) {      //Taken from Django docs
     let cookieValue = null;
 
@@ -43,4 +44,20 @@ export function getCookie(name) {      //Taken from Django docs
     }
 
     return cookieValue;
+}
+
+export function validUserPass(username, password) {
+    username = username.trim();
+    password = password.trim();
+    let err_msg = [];
+    if(username.length < 1) {
+        err_msg.push("Username cannot be empty.");
+    }
+    if(username.length > 150) {
+        err_msg.push("Username too long. Usernames may be up to 150 characters long.");
+    }
+    if(password.length < 8) {
+        err_msg.push("Password too short. Passwords must be at least 8 characters long.");
+    }
+    return err_msg;
 }

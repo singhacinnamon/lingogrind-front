@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 function UserOrLogin({ globUser, setGlobUser }) {
     const apiUrl = process.env.REACT_APP_API_URL;
     const logOut = () => {
-        fetch(`${apiUrl}/ling_logout`);
+        fetch(`${apiUrl}/ling_logout`, {
+            method: 'GET',
+            credentials: 'include',
+        });
         setGlobUser('')
     }
 
-    const loggedIn = !globUser == '';
+    const loggedIn = globUser !== '';
     return (
         <>
         { loggedIn ? (
