@@ -8,7 +8,8 @@ function UserOrLogin({ globUser, setGlobUser }) {
             method: 'GET',
             credentials: 'include',
         });
-        setGlobUser('')
+        setGlobUser('');
+        window.location.reload();
     }
 
     const loggedIn = globUser !== '';

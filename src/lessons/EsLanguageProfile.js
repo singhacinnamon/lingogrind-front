@@ -6,7 +6,6 @@ import popote from "../images/popote.png"
 function EsLanguageProfile(props) {
     return (
         <Lesson title="Language Profile: Spanish" langCode="es">
-            <h3>Who Speaks Spanish?</h3>
             <p className="lp">¡Hola! Spanish, otherwise known as Español or Castellano, is the 4th most spoken language in the world, 
             with around 560 million speakers. While it originates in Spain, it is the official language of 21 countries 
             mostly located in the Americas, such as Mexico and Argentina.
@@ -14,7 +13,7 @@ function EsLanguageProfile(props) {
             proficient in the language. In fact, there are more Spanish speakers in the US than in Spain!</p><br/>
 
             <img src={ spanishMap } className='spanishMap' alt='' />
-            <p className="note">Countries with Spanish as an Official Language from worldatlas.com</p><br/>
+            <p className="note-content">Countries with Spanish as an Official Language from worldatlas.com</p><br/>
 
             <h3>Related languages and Varieties</h3>
             <p className="lp">Spanish is a member of the Romance branch of the Indo-European language family, meaning that it is 
@@ -29,9 +28,24 @@ function EsLanguageProfile(props) {
             accents and slangs. Despite this, Spanish speakers from anywhere can generally understand each other without issue. </p><br/>
 
             <img src={ popote } className='popote' alt='' /><br/>
-            <p className="note">Different words for "straw" by region</p>
+            <p className="note-content">Different words for "straw" by region from Wikipedia</p>
             <br/>
+            <h3>Features of Spanish</h3>
+            <h5>Sentence Structure</h5>
+            <p className="lp">Like English, Spanish sentences generally use an SVO (Subject, Verb, Object) structure, where the subject is the 
+                doer of the action, the verb is the action itself, and the object or direct object are optional and represent the receiver of the action. 
+                However, this ordering is not strict and the subject is often omitted when the context allows for it. </p><br/>
 
+            <h5>Grammatical Gender</h5>
+            <p className="lp">In Spanish, all nouns have a gender: either male or female. That includes everything from "man"(masculine) and "table"(feminine) to 
+                "comment"(masculine) and "philosophy"(feminine). These genders are associated with individual words and are chosen seemingly at random. They are also essential 
+                to correct Spanish grammar. Don't worry though, you can usually figure out the gender of a noun based on the ending of the word. </p><br/>
+
+            <h5>Inflection</h5>
+            <p className="lp">Inflection is the process of modifying a word to add extra meaning to it. For example, compare English "push" and "pushed". 
+                By adding -ed to the end of the word, we added the meaning that the action occurred in the past. Spanish uses inflection for verbs, also called conjugation, 
+                as well as for adjectives, nouns and articles. It makes especially heavy use of conjugation(verb inflection) to describe things like who does an action (person), 
+                when an action occurs (tense), and whether a sentence is a command or merely a statement. </p>
         </Lesson>
     )
 }

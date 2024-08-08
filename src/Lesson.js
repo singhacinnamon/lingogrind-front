@@ -10,7 +10,7 @@ function Lesson({title, langCode, children}) {
                 <img src={ backArrow } className='backarr' alt='' />
             </Link>
             <Link to={"/" + langCode} className='backarr'>
-                <h5 className='back'>Lessons</h5>
+                <h3 className='back'>Lessons</h3>
                 </Link>
 
         </div>

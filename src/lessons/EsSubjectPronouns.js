@@ -91,10 +91,10 @@ function EsSubjectPronouns(props) {
             <h3>It (Él/Ella)</h3>
             <p className="lp">You're probably wondering: </p>
             <p className="quote">Why are there 2 ways to say "it" and why are they the same as "he" and "she"?</p>
-            <p className="lp">Think about when we use "it" in English. We use it when the thing in question either has no gender or we don't know
-            its gender. I hate to tell you this, but EVERY NOUN IN SPANISH HAS A GENDER. In my opinion it's the single worst thing about the 
-            Spanish language. For example, the word "shoe", zapato, is male so if "it" is referring to a shoe, you use <b>él</b>. The word "question" is 
-            female so if "it" refers to a question, then use <b>ella</b>. "Don't worry about it too much now, that time will come a couple lessons down the road. </p><br/>
+            <p className="lp">Think about when we use "it" in English. We use "it" when the thing in question either has no gender or we don't know
+            its gender. As I mentioned in the language profile, every Spanish noun has a gender. So instead of saying "it", in Spanish you refer to the noun as "he" or "she" based on its gender. 
+            For example, the word "shoe", zapato, is male so if "it" is referring to a shoe, you use <b>él</b>. The word "question", pregunta, is 
+            female so if "it" refers to a question, then use <b>ella</b>. Don't worry about it too much now, that time will come a couple lessons down the road. </p><br/>
 
             <h3>Ellos vs. Ellas</h3>
             <p className="lp">Lastly, to say "they" in Spanish there are 2 options. Use <b>ellos</b> when the "they" in question contains at 
