@@ -90,7 +90,7 @@ function App() {
             </li>
           </ul>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid main-space">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/es" element={<Es />} />

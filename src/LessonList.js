@@ -21,8 +21,12 @@ function LessonList(props) {
     return (
         <>
         <center>
-        <div className='top-round'><p className='note-content'>Lessons are meant to be completed in order
-        but you may skip ahead if you are already familiar with a topic</p></div>
+        <div className='top-round'>
+            <p className='note-content'>
+                Lessons are meant to be completed in order
+                but you may skip ahead if you are already familiar with a topic
+            </p>
+        </div>
         <ul className='list-group'>
             { data.map( (lsn) =>
                 <Link to={ "/"+ lsn.file }><li className='list-group-item'><b> { lsn.name } </b></li></Link>

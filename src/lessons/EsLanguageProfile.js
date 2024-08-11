@@ -12,10 +12,10 @@ function EsLanguageProfile(props) {
             While the United States doesn't have an official language, Spanish is widely used with around 16% of the population (53 million) 
             proficient in the language. In fact, there are more Spanish speakers in the US than in Spain!</p><br/>
 
-            <img src={ spanishMap } className='spanishMap' alt='' />
+            <img src={ spanishMap } className='spanishMap' alt='Spanish Map' />
             <p className="note-content">Countries with Spanish as an Official Language from worldatlas.com</p><br/>
 
-            <h3>Related languages and Varieties</h3>
+            <h2>Related languages and Varieties</h2>
             <p className="lp">Spanish is a member of the Romance branch of the Indo-European language family, meaning that it is 
             descended from Latin. As a result, it shares many similarities with languages such as Portuguese, Italian, and French. 
             English speakers will also recognize many words due to the huge amount of French influence present in English. Spanish 
@@ -27,21 +27,21 @@ function EsLanguageProfile(props) {
             pronunciation are somewhat different and many words take on different meanings. In Latin America there are also many regional 
             accents and slangs. Despite this, Spanish speakers from anywhere can generally understand each other without issue. </p><br/>
 
-            <img src={ popote } className='popote' alt='' /><br/>
+            <img src={ popote } className='popote' alt='Words for Straw' /><br/>
             <p className="note-content">Different words for "straw" by region from Wikipedia</p>
             <br/>
-            <h3>Features of Spanish</h3>
-            <h5>Sentence Structure</h5>
+            <h2>Features of Spanish</h2>
+            <h4>Sentence Structure</h4>
             <p className="lp">Like English, Spanish sentences generally use an SVO (Subject, Verb, Object) structure, where the subject is the 
                 doer of the action, the verb is the action itself, and the object or direct object are optional and represent the receiver of the action. 
                 However, this ordering is not strict and the subject is often omitted when the context allows for it. </p><br/>
 
-            <h5>Grammatical Gender</h5>
+            <h4>Grammatical Gender</h4>
             <p className="lp">In Spanish, all nouns have a gender: either male or female. That includes everything from "man"(masculine) and "table"(feminine) to 
                 "comment"(masculine) and "philosophy"(feminine). These genders are associated with individual words and are chosen seemingly at random. They are also essential 
                 to correct Spanish grammar. Don't worry though, you can usually figure out the gender of a noun based on the ending of the word. </p><br/>
 
-            <h5>Inflection</h5>
+            <h4>Inflection</h4>
             <p className="lp">Inflection is the process of modifying a word to add extra meaning to it. For example, compare English "push" and "pushed". 
                 By adding -ed to the end of the word, we added the meaning that the action occurred in the past. Spanish uses inflection for verbs, also called conjugation, 
                 as well as for adjectives, nouns and articles. It makes especially heavy use of conjugation(verb inflection) to describe things like who does an action (person), 

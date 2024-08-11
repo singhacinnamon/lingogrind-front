@@ -15,7 +15,7 @@ function Lesson({title, langCode, children}) {
 
         </div>
         <h1 className='title ctr'>{title}</h1>
-        <div className = 'lesson'>
+        <div className = 'lesson ctr'>
             {children}
         </div>
         </>

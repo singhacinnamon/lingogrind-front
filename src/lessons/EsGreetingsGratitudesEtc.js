@@ -8,45 +8,49 @@ function EsGreetingsGratitudesEtc(props) {
                 They are fundamental elements of language, and often convey feelings and intentions more than distinct meanings. In any language, 
                 they are a great place to start. So why don't we get started?
             </p><br/>
-            <h3>Vocabulary</h3>
-            <table className='table'>
-                <tr>
-                    <th>Word</th>
-                    <th>Meaning</th>
-                </tr>
-                <tr>
-                    <td>hola</td>
-                    <td>hello</td>
-                </tr>
-                <tr>
-                    <td>adiós</td>
-                    <td>goodbye</td>
-                </tr>
-                <tr>
-                    <td>gracias</td>
-                    <td>thank you</td>
-                </tr>
-                <tr>
-                    <td>de nada</td>
-                    <td>you're welcome</td>
-                </tr>
-                <tr>
-                    <td>lo siento</td>
-                    <td>sorry</td>
-                </tr>
-                <tr>
-                    <td>disculpe</td>
-                    <td>excuse me</td>
-                </tr>
-                <tr>
-                    <td>(con) permiso</td>
-                    <td>with permission</td>
-                </tr>
-                <tr>
-                    <td>perdón(ame)</td>
-                    <td>forgive me</td>
-                </tr>
-            </table><br/>
+            <div className="thirds-grid">
+                <div className="second-in-grid round-light-yellow">
+                    <h2>Vocabulary</h2>
+                    <table className='table'>
+                        <tr>
+                            <th>Word</th>
+                            <th>Meaning</th>
+                        </tr>
+                        <tr>
+                            <td>hola</td>
+                            <td>hello</td>
+                        </tr>
+                        <tr>
+                            <td>adiós</td>
+                            <td>goodbye</td>
+                        </tr>
+                        <tr>
+                            <td>gracias</td>
+                            <td>thank you</td>
+                        </tr>
+                        <tr>
+                            <td>de nada</td>
+                            <td>you're welcome</td>
+                        </tr>
+                        <tr>
+                            <td>lo siento</td>
+                            <td>sorry</td>
+                        </tr>
+                        <tr>
+                            <td>disculpe</td>
+                            <td>excuse me</td>
+                        </tr>
+                        <tr>
+                            <td>(con) permiso</td>
+                            <td>with permission</td>
+                        </tr>
+                        <tr>
+                            <td>perdón(ame)</td>
+                            <td>forgive me</td>
+                        </tr>
+                    </table><br/>
+                </div>
+            </div>
             <p className='note-content'>parentheses are used here to indicate a common shortening of a full word/phrase</p><br/>
 
             <p className='lp'>  <b>Hola</b>, <b>adiós</b>, <b>gracias</b>, <b>de nada</b>, and <b>lo siento</b> are all used in pretty much the same way as their English counterparts. </p><br/>
