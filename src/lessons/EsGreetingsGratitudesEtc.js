@@ -1,9 +1,9 @@
 import React from 'react';
 import Lesson from "../Lesson.js"
 
-function EsGreetingsGratitudesEtc(props) {
+function EsGreetingsGratitudesEtc({ globUser }) {
     return (
-        <Lesson title="Greetings, Gratitudes, Etc." langCode="es">
+        <Lesson title="Greetings, Gratitudes, Etc." langCode="es" file="EsGreetingsGratitudesEtc" globUser={ globUser }>
             <p className='lp'>  Hello, thank you, sorry, excuse me! These words and phrases are difficult to label as a group, and yet they seem to belong together.
                 They are fundamental elements of language, and often convey feelings and intentions more than distinct meanings. In any language, 
                 they are a great place to start. So why don't we get started?
@@ -56,7 +56,7 @@ function EsGreetingsGratitudesEtc(props) {
             <p className='lp'>  <b>Hola</b>, <b>adiós</b>, <b>gracias</b>, <b>de nada</b>, and <b>lo siento</b> are all used in pretty much the same way as their English counterparts. </p><br/>
 
             <p className='lp'>  <b>Disculpe</b> and <b>(con) permiso</b> are very similar, and can both be used to get people's attention. <b>Disculpe</b> can be used as a
-            mild apology. <b>Permiso</b> is also often used to preface asking permission to do something.
+            mild apology. 
             </p><br/>
 
             <p className='quote'>¿<b>Con permiso</b>, podría usar el baño?</p>

@@ -9,7 +9,6 @@ function UserOrLogin({ globUser, setGlobUser }) {
             credentials: 'include',
         });
         setGlobUser('');
-        window.location.reload();
     }
 
     const loggedIn = globUser !== '';

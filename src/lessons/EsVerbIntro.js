@@ -1,9 +1,9 @@
 import Lesson from "../Lesson.js"
 import React from 'react';
 
-function EsVerbIntro(props) {
+function EsVerbIntro({ globUser }) {
     return (
-        <Lesson title="Intro to Verbs: Infinitive and Present Indicative" langCode="es">
+        <Lesson title="Intro to Verbs: Infinitive and Present Indicative" langCode="es" file="EsVerbIntro" globUser={ globUser }>
             <p className="lp">Welcome to the wonderful world of conjugations! Remember, conjugation is just a fancy word 
                 for modifying a verb to give it a different meaning. Today’s goal is to learn the present indicative form 
                 in Spanish. In English that would be a sentence like “I run” or “It eats”. But before we jump into that, 

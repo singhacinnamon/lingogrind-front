@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 
-function LessonComponentLoader({ componentName }) {
+function LessonComponentLoader({ componentName, globUser}) {
   const LazyLessonComponent = lazy(() =>
     import(`./lessons/${componentName}`)
   );
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LazyLessonComponent />
+      <LazyLessonComponent globUser={ globUser }/>
     </Suspense>
   );
 }

@@ -92,8 +92,8 @@ function App() {
         </div>
         <div className="container-fluid main-space">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/es" element={<Es />} />
+            <Route path="/" element={<HomePage globUser={ globUser }/>} />
+            <Route path="/es" element={<Es globUser={ globUser }/>} />
             <Route path="/th" element={<Th />} />
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login setGlobUser={ setGlobUser }/>} />
@@ -101,8 +101,8 @@ function App() {
             { data.map( (lsn) =>
               <Route
               key={lsn.file}
-              path={`/${lsn.file}`}
-              element={<LessonComponentLoader componentName={lsn.file} />}
+              path={ `/${lsn.file}` }
+              element={<LessonComponentLoader componentName={ lsn.file } globUser={ globUser }/>}
               />
             )}
           </Routes>

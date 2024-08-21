@@ -1,9 +1,9 @@
 import Lesson from "../Lesson.js"
 import React from 'react';
 
-function EsSubjectPronouns(props) {
+function EsSubjectPronouns({ globUser }) {
     return (
-        <Lesson title="Subject Pronouns" langCode="es">
+        <Lesson title="Subject Pronouns" langCode="es" file="EsSubjectPronouns" globUser={ globUser }>
             <p className="lp">Diego had a long day at school, so when Diego got home Diego took a long nap. Sounds weird right?
             This sentence is in dire need of pronouns, the topic of this lesson.</p><br/>
 

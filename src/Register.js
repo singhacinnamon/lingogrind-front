@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCookie, validUserPass } from "./Utilities"
+import { validUserPass } from "./Utilities"
 
 function Register({ setGlobUser  }) {
     const apiUrl = process.env.REACT_APP_API_URL;
@@ -29,13 +29,11 @@ function Register({ setGlobUser  }) {
         if(validMsgVar.length > 0){
             return;
         }
-        const csrf = getCookie('csrftoken');
     
         const response = await fetch(`${apiUrl}/ling_reg/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrf
             },
             credentials: 'include',
             body: JSON.stringify(data),

@@ -3,9 +3,9 @@ import React from 'react';
 import spanishMap from "../images/spanish-map.png"
 import popote from "../images/popote.png"
 
-function EsLanguageProfile(props) {
+function EsLanguageProfile({ globUser }) {
     return (
-        <Lesson title="Language Profile: Spanish" langCode="es">
+        <Lesson title="Language Profile: Spanish" langCode="es" file="EsLanguageProfile" globUser={ globUser }>
             <p className="lp">¡Hola! Spanish, otherwise known as Español or Castellano, is the 4th most spoken language in the world, 
             with around 560 million speakers. While it originates in Spain, it is the official language of 21 countries 
             mostly located in the Americas, such as Mexico and Argentina.

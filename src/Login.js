@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getCookie, validUserPass } from "./Utilities"
+import { getCookie, validUserPass } from "./Utilities";
 
 function Login({ setGlobUser  }) {
     const apiUrl = process.env.REACT_APP_API_URL;

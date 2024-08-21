@@ -35,8 +35,8 @@ p {
 
 .main-space {
   padding-top: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-bottom: 3%;
 }
 
@@ -52,6 +52,11 @@ p {
 }
 .flex {
   display: flex;
+}
+
+.full-flex {
+  display: flex;
+  height: 100%;
 }
 
 .side-by-side-split {
@@ -159,7 +164,7 @@ p {
 #nav-container {
   background-color: #0072af;
   position: sticky;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 #logo {
@@ -186,6 +191,7 @@ p {
 
 #homepage-blurb {
   max-width: 540px;
+  font-size: 22px;
 }
 
 .list-group {
@@ -193,11 +199,23 @@ p {
 }
 
 .list-group-item {
-  color: #808080;
   background-color: white;
   font-size: 25px;
   text-align: left;
   border-radius: 0rem !important;
+  padding: 0px;
+}
+
+.list-group-item a {
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  color: #808080;
+}
+
+.lesson-checkbox {
+  transform: scale(1.5);
+  margin: 15px;
 }
 
 .lesson {
@@ -225,16 +243,22 @@ p {
 .lesson>img {
   max-width: 100%;
   max-height: 100%;
-
 }
 
-.login-bubble {
-  background-color: white;
-  color: darkslategray;
-  text-align: center;
-  margin: auto;
-  border-radius: 5rem;
-  padding: 2%;
+.mark-read-button {
+  color: white;
+  font-size: 23px;
+  background-color:#00629f;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 0.5rem;
+  width: 20%;
+}
+
+.mark-read-button:hover {
+  opacity: 0.9;
 }
 
 .btn-db {
@@ -274,10 +298,38 @@ p {
 
 .hometitle {
   margin: auto;
-  font-size: 50px;
+  font-size: 70px;
   text-align: center;
   margin-top: 1%;
   margin-bottom: 2%;
+}
+
+#homepage-up-arrow {
+  margin-left: auto;
+  background-color: #38AFE9;
+  width: 15%;
+  align-content: center;
+}
+
+#homepage-up-arrow h4 {
+  text-align: center;
+  color: #f7e457;
+  width: 0%;
+  margin-left: auto;
+  margin-right: 50px;
+  padding-right: 5%;
+  margin-top: -10%;
+}
+
+.note-bubble {
+  border-radius: 0.5rem;
+  margin-left: auto;
+  color:darkslategray;
+  background-color:white;
+  width: 10%;
+  min-width: 220px;
+  padding: 10px;
+  margin-top: -5px;
 }
 .yellow {
   color: #f7e557;
