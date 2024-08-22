@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 
 function UserOrLogin({ globUser, setGlobUser }) {
     const apiUrl = process.env.REACT_APP_API_URL;
-    const logOut = () => {
-        fetch(`${apiUrl}/ling_logout`, {
+    const logOut = async () => {
+        const response = await fetch(`${apiUrl}/ling_logout`, {
             method: 'GET',
             credentials: 'include',
         });
-        setGlobUser('');
+
+        if(response.ok) {
+            setGlobUser('');
+            window.location.reload(); //Needed to make App.js reestablish csrf token for subsequent user sessions
+        }
     }
 
     const loggedIn = globUser !== '';
